@@ -1,0 +1,30 @@
+{
+  "name": "gulp-yaml-include",
+  "version": "0.1.0",
+  "description": "A gulp plugin for js-yaml and yaml-include.",
+  "main": "./src/index.js",
+  "scripts": {
+    "test": "mocha tests"
+  },
+  "repository": {
+      "type": "git",
+      "url": "https://github.com/aaharu/gulp-yaml-include.git"
+  },
+  "author": "aaharu",
+  "license": "BSD-2-Clause",
+  "dependencies": {
+    "gulp-util": "^3.0.6",
+    "js-yaml": "^3.4.2",
+    "through2": "^2.0.0",
+    "yaml-include": "^1.1.0"
+  },
+  "devDependencies": {
+    "event-stream": "^3.3.1",
+    "mocha": "^2.3.3"
+  },
+  "keywords": [
+    "yaml",
+    "include",
+    "gulpplugin"
+  ]
+}
