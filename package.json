@@ -4,11 +4,12 @@
   "description": "A gulp plugin for js-yaml and yaml-include.",
   "main": "./src/index.js",
   "scripts": {
-    "test": "mocha tests"
+    "test": "mocha tests",
+    "coverage": "istanbul cover $(npm bin)/_mocha tests --report lcovonly -- -R spec && cat ./coverage/lcov.info | $(npm bin)/coveralls && rm -rf ./coverage"
   },
   "repository": {
-      "type": "git",
-      "url": "https://github.com/aaharu/gulp-yaml-include.git"
+    "type": "git",
+    "url": "https://github.com/aaharu/gulp-yaml-include.git"
   },
   "author": "aaharu",
   "license": "BSD-2-Clause",
@@ -19,8 +20,11 @@
     "yaml-include": "^1.1.0"
   },
   "devDependencies": {
+    "coveralls": "^2.11.4",
     "event-stream": "^3.3.1",
-    "mocha": "^2.3.3"
+    "istanbul": "^0.3.22",
+    "mocha": "^2.3.3",
+    "mocha-lcov-reporter": "^1.0.0"
   },
   "keywords": [
     "yaml",
