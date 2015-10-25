@@ -18,6 +18,39 @@ gulp.task("sample", function () {
 });
 ```
 
+```
+current/
+├── gulpfile.js
+├── dist/
+└── src/
+    ├── base.yaml
+    └── parts/
+        └── sub.yaml
+```
+
+`src/base.yaml`
+```yaml
+version: 1
+# known issue: relative path problem
+sub: !!inc/file src/parts/sub.yaml
+```
+
+`src/parts/sub.yaml`
+```yaml
+hoge: fuga
+```
+
+`dist/base.yaml`
+```
+version: 1
+sub:
+  hoge: fuga
+```
+
+## TODO
+
+- fix relative paths
+
 ## LICENSE
 
 BSD-2-Clause
