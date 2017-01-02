@@ -5,15 +5,14 @@ var through = require("through2"),
     yamlinc = require("yaml-include"),
     PassThrough = require("stream").PassThrough;
 
-module.exports = function (opt) {
-
-    opt = opt || {}; //TODO
+module.exports = function () {
 
     return through.obj(function (file, enc, cb) {
         if (file.isNull()) {
             // return empty file
             return cb(null, file);
         }
+        yamlinc.setBaseFile(file.path);
         if (file.isBuffer()) {
             var yml = yaml.load(file.contents.toString(enc), {
                 schema: yamlinc.YAML_INCLUDE_SCHEMA,

@@ -32,8 +32,7 @@ gulp.task("sample", function () {
 `src/base.yaml`
 ```yaml
 version: 1
-# known issue: relative path problem
-sub: !!inc/file src/parts/sub.yaml
+sub: !!inc/file parts/sub.yaml
 ```
 
 `src/parts/sub.yaml`
@@ -49,10 +48,6 @@ version: 1
 sub:
   hoge: fuga
 ```
-
-## TODO
-
-- fix relative paths
 
 ## LICENSE
 
