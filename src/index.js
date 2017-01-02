@@ -5,9 +5,7 @@ var through = require("through2"),
     yamlinc = require("yaml-include"),
     PassThrough = require("stream").PassThrough;
 
-module.exports = function (opt) {
-
-    opt = opt || {}; //TODO
+module.exports = function () {
 
     return through.obj(function (file, enc, cb) {
         if (file.isNull()) {
