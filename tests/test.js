@@ -1,6 +1,8 @@
 "use strict";
 
-var assert = require("assert"),
+var path = require("path"),
+    fs = require("fs"),
+    assert = require("assert"),
     es = require("event-stream"),
     gutil = require("gulp-util"),
     PassThrough = require("stream").PassThrough,
@@ -9,9 +11,11 @@ var assert = require("assert"),
 describe("gulp-yaml-include", function () {
     it("should work in buffer mode", function (done) {
         var stream = index();
-        var testBuffer = new Buffer("paths: !!inc/file tests/hoge.yaml"),
-            testFile = new gutil.File({
-                contents: testBuffer
+        var testFile = new gutil.File({
+                base: __dirname,
+                cwd: __dirname,
+                path: path.join(__dirname, 'test.yaml'),
+                contents: fs.readFileSync(path.join(__dirname, "test.yaml"))
             });
 
         stream.on("data", function () {
@@ -30,11 +34,12 @@ describe("gulp-yaml-include", function () {
         var stream = index();
         var testStream = new PassThrough();
         var testFile = new gutil.File({
+            base: __dirname,
+            cwd: __dirname,
+            path: path.join(__dirname, 'test.yaml'),
             contents: testStream
         });
-        testStream.write(new Buffer("paths: !!inc/file tests/hoge.yaml"));
-        testStream.write(new Buffer("\n"));
-        testStream.write(new Buffer("c: 1"));
+        testStream.write(fs.readFileSync(path.join(__dirname, "test.yaml")));
         testStream.end();
 
         stream.on("data", function (newFile) {
@@ -66,6 +71,27 @@ describe("gulp-yaml-include", function () {
             path: "null.yaml",
             contents: null
          }));
+        stream.end();
+    });
+
+    it("should work subdir inc", function (done) {
+        var stream = index();
+        var testFile = new gutil.File({
+                base: __dirname,
+                cwd: __dirname,
+                path: path.join(__dirname, 'base.yaml'),
+                contents: fs.readFileSync(path.join(__dirname, "base.yaml"))
+            });
+
+        stream.on("data", function () {
+            assert.equal("version: 1\nsub:\n  hoge: fuga\n", testFile.contents.toString());
+        });
+
+        stream.on("end", function () {
+            done();
+        });
+
+        stream.write(testFile);
         stream.end();
     });
 });

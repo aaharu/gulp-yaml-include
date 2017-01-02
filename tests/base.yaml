@@ -1,0 +1,2 @@
+version: 1
+sub: !!inc/file subdir/sub.yaml

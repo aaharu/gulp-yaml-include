@@ -12,6 +12,7 @@ module.exports = function () {
             // return empty file
             return cb(null, file);
         }
+        yamlinc.setBaseFile(file.path);
         if (file.isBuffer()) {
             var yml = yaml.load(file.contents.toString(enc), {
                 schema: yamlinc.YAML_INCLUDE_SCHEMA,
