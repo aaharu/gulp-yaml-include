@@ -3,7 +3,8 @@
 A gulp plugin for [yaml-include](https://github.com/claylo/yaml-include).  
 
 [![npm version](https://img.shields.io/npm/v/gulp-yaml-include.svg)](https://www.npmjs.com/package/gulp-yaml-include)
-[![Build Status](https://img.shields.io/travis/aaharu/gulp-yaml-include.svg)](https://travis-ci.org/aaharu/gulp-yaml-include) [![Coverage Status](https://img.shields.io/coveralls/aaharu/gulp-yaml-include.svg)](https://coveralls.io/github/aaharu/gulp-yaml-include?branch=master) [![Dependency Status](https://img.shields.io/gemnasium/aaharu/gulp-yaml-include.svg)](https://gemnasium.com/aaharu/gulp-yaml-include)  
+[![Build Status](https://img.shields.io/travis/aaharu/gulp-yaml-include.svg)](https://travis-ci.org/aaharu/gulp-yaml-include) [![Coverage Status](https://img.shields.io/coveralls/aaharu/gulp-yaml-include.svg)](https://coveralls.io/github/aaharu/gulp-yaml-include?branch=master) [![Dependency Status](https://img.shields.io/gemnasium/aaharu/gulp-yaml-include.svg)](https://gemnasium.com/aaharu/gulp-yaml-include) [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Faaharu%2Fgulp-yaml-include.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Faaharu%2Fgulp-yaml-include?ref=badge_shield)
+ 
 
 ## Usage
 
@@ -52,3 +53,6 @@ sub:
 ## LICENSE
 
 BSD-2-Clause
+
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Faaharu%2Fgulp-yaml-include.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Faaharu%2Fgulp-yaml-include?ref=badge_large)
