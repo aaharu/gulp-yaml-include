@@ -31,7 +31,7 @@ module.exports = function () {
                 schema: yamlinc.YAML_INCLUDE_SCHEMA,
                 filename: file.path
             });
-            file.contents = new Buffer(yaml.dump(yml), enc);
+            file.contents = Buffer.from(yaml.dump(yml), enc);
         }
         if (file.isStream()) {
             file.contents.setEncoding(enc);

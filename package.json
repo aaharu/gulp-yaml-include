@@ -1,11 +1,10 @@
 {
   "name": "gulp-yaml-include",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "A gulp plugin for yaml-include.",
   "main": "./src/index.js",
   "scripts": {
-    "test": "mocha tests",
-    "coverage": "istanbul cover $(npm bin)/_mocha tests --report lcovonly -- -R spec && cat ./coverage/lcov.info | $(npm bin)/coveralls && rm -rf ./coverage"
+    "test": "istanbul cover $(npm bin)/_mocha tests --report lcovonly -- -R spec"
   },
   "repository": {
     "type": "git",
@@ -19,17 +18,20 @@
     "yaml-include": "^1.2.0"
   },
   "devDependencies": {
-    "coveralls": "^2.11.15",
-    "eslint": "^3.12.2",
+    "coveralls": "^3.0.1",
+    "eslint": "^4.19.1",
     "event-stream": "^3.3.4",
     "gulp-util": "^3.0.8",
     "istanbul": "^0.4.5",
-    "mocha": "^2.5.3",
-    "mocha-lcov-reporter": "^1.2.0"
+    "mocha": "^5.2.0",
+    "mocha-lcov-reporter": "^1.3.0"
   },
   "keywords": [
     "yaml",
     "include",
     "gulpplugin"
+  ],
+  "files": [
+    "src"
   ]
 }

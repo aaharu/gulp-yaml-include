@@ -2,3 +2,13 @@ node_modules/
 npm-debug.log
 
 coverage/
+
+.DS_Store
+Thumbs.db
+Desktop.ini
+.vscode/
+.idea/
+*.iml
+*.swp
+*~
+\#*\#

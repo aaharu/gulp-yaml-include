@@ -40,11 +40,13 @@ describe("gulp-yaml-include", function () {
             contents: testStream
         });
         testStream.write(fs.readFileSync(path.join(__dirname, "test.yaml")));
+        testStream.write(Buffer.from("\n"));
+        testStream.write(Buffer.from("c: 1"));
         testStream.end();
 
         stream.on("data", function (newFile) {
             newFile.pipe(es.wait(function(err, data) {
-                assert.equal("paths:\n  a: b\nc: 1\n", data);
+                assert.equal("paths:\n  a: b\nc: 1\n", data.toString());
             }));
         });
 

@@ -1,8 +1,8 @@
 language: node_js
 node_js:
-  - "4"
-  - "6"
-after_success: "npm run coverage"
+  - lts/*
+after_success:
+  - cat ./coverage/lcov.info | $(npm bin)/coveralls
 
 branches:
   only: [ master ]
