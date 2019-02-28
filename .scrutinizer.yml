@@ -11,10 +11,11 @@ build:
     coverage:
       tests:
         override:
-          - command: npm run test
+          - command: |
+              $(npm bin)/istanbul cover $(npm bin)/_mocha tests --report cobertura -- -R spec
             coverage:
-              file: coverage/coverage.json
-              format: lcov
+              file: coverage/cobertura-coverage.xml
+              format: cobertura
 
 filter:
   excluded_paths:
