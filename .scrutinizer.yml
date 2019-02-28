@@ -13,8 +13,8 @@ build:
         override:
           - command: npm run test
             coverage:
-              file: 'coverage/lcov.info'
-              format: 'lcov'
+              file: coverage/coverage.json
+              format: lcov
 
 filter:
   excluded_paths:
