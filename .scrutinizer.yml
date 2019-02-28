@@ -1,0 +1,21 @@
+checks:
+    javascript: true
+
+build:
+  nodes:
+    analysis:
+      tests:
+        override:
+          - js-scrutinizer-run
+          - eslint-run src
+    coverage:
+      tests:
+        override:
+          - command: npm run test
+            coverage:
+              file: 'coverage/lcov.info'
+              format: 'lcov'
+
+filter:
+  excluded_paths:
+    - tests/*
