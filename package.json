@@ -18,9 +18,9 @@
     "yaml-include": "^1.2.0"
   },
   "devDependencies": {
-    "coveralls": "^3.0.1",
+    "coveralls": "^3.0.3",
     "eslint": "^4.19.1",
-    "event-stream": "^3.3.4",
+    "event-stream": "^3.3.5",
     "gulp-util": "^3.0.8",
     "istanbul": "^0.4.5",
     "mocha": "^5.2.0",
