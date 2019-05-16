@@ -19,7 +19,7 @@
   },
   "devDependencies": {
     "coveralls": "3.0.3",
-    "eslint": "5.14.1",
+    "eslint": "5.16.0",
     "event-stream": "4.0.1",
     "gulp-util": "3.0.8",
     "istanbul": "0.4.5",
