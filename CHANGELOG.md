@@ -1,5 +1,11 @@
 # Change Log
 
+## UNRELEASED
+
+### Changed
+
+- update dependencies
+
 ## [0.3.0] - 2019-02-28
 
 ### Changed
