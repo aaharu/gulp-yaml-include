@@ -8,14 +8,6 @@ build:
         override:
           - js-scrutinizer-run
           - eslint-run src
-    coverage:
-      tests:
-        override:
-          - command: |
-              $(npm bin)/istanbul cover $(npm bin)/_mocha tests --report cobertura -- -R spec
-            coverage:
-              file: coverage/cobertura-coverage.xml
-              format: cobertura
 
 filter:
   excluded_paths:
