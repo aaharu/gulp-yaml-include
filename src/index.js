@@ -16,10 +16,10 @@
 var through = require("through2"),
     yaml = require("js-yaml"),
     yamlinc = require("yaml-include"),
+    es = require("event-stream"),
     PassThrough = require("stream").PassThrough;
 
 module.exports = function () {
-
     return through.obj(function (file, enc, cb) {
         if (file.isNull()) {
             // return empty file
@@ -32,19 +32,22 @@ module.exports = function () {
                 filename: file.path
             });
             file.contents = Buffer.from(yaml.dump(yml), enc);
-        }
-        if (file.isStream()) {
+            cb(null, file);
+        } else if (file.isStream()) {
             file.contents.setEncoding(enc);
-            var ymlobj = yaml.load(file.contents.read(), {
-                schema: yamlinc.YAML_INCLUDE_SCHEMA,
-                filename: file.path
-            });
-            var stream = new PassThrough();
-            stream.write(yaml.dump(ymlobj));
-            file.contents = file.contents.pipe(stream);
+            file.contents.pipe(es.wait(function(err, data) {
+                var ymlobj = yaml.load(data.toString(), {
+                    schema: yamlinc.YAML_INCLUDE_SCHEMA,
+                    filename: file.path
+                });
+                var stream = new PassThrough();
+                stream.write(yaml.dump(ymlobj));
+                stream.end();
+                file.contents = file.contents.pipe(stream);
+                cb(null, file);
+            }));
+        } else {
+            cb(null, file);
         }
-
-        return cb(null, file);
     });
-
 };
