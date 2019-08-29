@@ -20,9 +20,9 @@
     "yaml-include": "^1.2.0"
   },
   "devDependencies": {
-    "coveralls": "^3.0.4",
-    "eslint": "^6.0.1",
-    "mocha": "^6.1.4",
+    "coveralls": "^3.0.6",
+    "eslint": "^6.2.2",
+    "mocha": "^6.2.0",
     "nyc": "^14.1.1",
     "vinyl": "^2.2.0"
   },
