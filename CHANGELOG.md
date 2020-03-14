@@ -1,5 +1,11 @@
 # Change Log
 
+## Unreleased
+
+### Changed
+
+- update devDependencies
+
 ## [0.3.1] - 2019-07-11
 
 ### Changed
