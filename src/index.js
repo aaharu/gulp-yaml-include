@@ -1,14 +1,6 @@
 /*!
  * @license gulp-yaml-include (c) 2015 aaharu
  * Copyrights licensed under the 2-clause BSD License. See the accompanying LICENSE file for terms.
- *
- * Includes:
- * - through2
- *   Copyright (c) 2016 Rod Vagg (the "Original Author") and additional contributors
- * - js-yaml
- *   Copyright (C) 2011-2015 by Vitaly Puzrin
- * - yaml-include
- *   Copyright (c) 2015, Clay Loveless
  */
 
 "use strict";
